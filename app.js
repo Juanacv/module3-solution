@@ -35,19 +35,21 @@ function NarrowItDownController(MenuSearchServiceFactory) {
  ni.results = "";
  var narrowService = MenuSearchServiceFactory();
  ni.narrowSearch = function() {
-   var promise  = narrowService.getFilteredItems(ni.searchTerm);
-   promise.then(function (response) {
-     ni.items = response;
-     if (response.length === 0) {
-       ni.results = "No items found!";
-     }
-     else {
-       ni.results = ni.items.length + " items found!";
-     }
-   })
-   .catch(function (error) {
-    console.log(error);
-  });
+   if (ni.searchTerm !== "") {
+     var promise  = narrowService.getFilteredItems(ni.searchTerm);
+     promise.then(function (response) {
+       ni.items = response;
+       if (response.length === 0) {
+         ni.results = "No items found!";
+       }
+       else {
+         ni.results = ni.items.length + " items found!";
+       }
+     })
+     .catch(function (error) {
+      console.log(error);
+    });
+  }
  };
 
   ni.removeItem = function (itemIndex) {
