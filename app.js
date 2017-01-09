@@ -50,6 +50,9 @@ function NarrowItDownController(MenuSearchServiceFactory) {
       console.log(error);
     });
   }
+  else {
+    ni.results = "Nothing found";
+  }
  };
 
   ni.removeItem = function (itemIndex) {
