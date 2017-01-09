@@ -51,6 +51,7 @@ function NarrowItDownController(MenuSearchServiceFactory) {
     });
   }
   else {
+    ni.items = [];
     ni.results = "Nothing found";
   }
  };
