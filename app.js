@@ -15,16 +15,12 @@ function FoundItemsDirective() {
       onRemove: '&',
       results: '@'
     },
-    controller: FoundItemsDirectiveController,
+    controller: NarrowItDownController,
     controllerAs:'fi',
     bindToController: true
   };
 
   return ddo;
-}
-
-function FoundItemsDirectiveController() {
-  var found = this;
 }
 
 NarrowItDownController.$inject = ['MenuSearchServiceFactory'];
