@@ -4,12 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <ol>
+      <ul>
         <li ng-repeat="item in fi.items">
-          Name : {{ item.name }} <br> Description: {{ item.description }}
+          {{item.short_name}} Name : {{ item.name }} <br> Description: {{ item.description }}
           <button class="btn btn-danger" ng-click="fi.onRemove({index: $index});">Don't want this one!</button>
         </li>
-      </ol>
+      </ul>
     </div>
   </div>
 </div>
